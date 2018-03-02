@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60" debug="false">
+
+    <property name="log.base" value="${IPHARM_HOME:-..}/logs"/>
+
+    <!--控制台打印-->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %level %c[%L] %n%m%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--记录打印日志-->
+    <appender name="rollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.base}/demo.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.base}/demo_%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %level %c[%L] %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--配置SQL 记录打印日志 开始-->
+    <appender name="sqlFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.base}/log-sql.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] [%level] - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.base}/log-sql.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <!--打印com.alibaba.dubbo包下日志 (打印sql),此logger虽然没有指定appender，但是他的上级root已经指定了，所有他会把信息交给上级 -->
+    <logger name="com.example.demo.dao" level="ERROR" additivity="false">
+        <appender-ref  ref="sqlFile"/>
+        <appender-ref ref="console" />
+    </logger>
+
+    <root level="ERROR">
+        <appender-ref ref="console" />
+        <appender-ref ref="rollingFile" />
+    </root>
+</configuration>
