@@ -8,7 +8,10 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>demotest10</module>
+        <module>democontroller</module>
+        <module>demoapi</module>
+        <module>demoserver</module>
+        <module>demomapper</module>
     </modules>
 
     <name>${project.artifactId}</name>
@@ -27,10 +30,29 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <springboot.version>1.5.10.RELEASE</springboot.version>
+        <demo.version>0.0.1-SNAPSHOT</demo.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <!--构建的子模块-->
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>demo-api</artifactId>
+                <version>${demo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>demo-server</artifactId>
+                <version>${demo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>demo-mapper</artifactId>
+                <version>${demo.version}</version>
+            </dependency>
+
+            <!--springboot 自带-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
@@ -42,6 +64,7 @@
                 <artifactId>spring-boot-starter-test</artifactId>
                 <version>${springboot.version}</version>
             </dependency>
+
             <!--spring-boot logback引用 -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -79,11 +102,26 @@
         </dependencies>
     </dependencyManagement>
 
+
     <build>
         <plugins>
             <plugin>
+                <!-- The plugin rewrites your manifest -->
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>1.5.10.RELEASE</version>
+                <configuration><!-- 指定该Main Class为全局的唯一入口 -->
+                    <mainClass>com.example.demo.DemoApplication</mainClass>
+                    <layout>ZIP</layout>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <!--可以把依赖的包都打包到生成的Jar包中-->
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
