@@ -45,7 +45,7 @@ public class MybatisDbAConfig {
         // 使用titan数据源, 连接titan库
         factoryBean.setDataSource(ds1);
         //添加XML目录
-        factoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/ds/*.xml"));
+        factoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/ds/**/*.xml"));
         return factoryBean.getObject();
     }
 

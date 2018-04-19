@@ -29,7 +29,7 @@ public class MybatisDbBConfig {
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
         // 使用titan数据源, 连接titan库
         factoryBean.setDataSource(ds2);
-        factoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/dsFull/*.xml"));
+        factoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/dsFull/**/*.xml"));
         return factoryBean.getObject();
     }
 

@@ -12,6 +12,7 @@
         <module>demoapi</module>
         <module>demoserver</module>
         <module>demomapper</module>
+        <module>demoutil</module>
     </modules>
 
     <name>${project.artifactId}</name>
