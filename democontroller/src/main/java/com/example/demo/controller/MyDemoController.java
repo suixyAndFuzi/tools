@@ -22,6 +22,6 @@ public class MyDemoController {
         MyDemoBean myDemoBean = new MyDemoBean();
         myDemoBean.setName(name);
         String result = myDemoServer.selectDemo(myDemoBean);
-        return "Hello Spring Boot! The BookName is "+bookBean.getName()+";and Book Author is "+bookBean.getAuthor()+";and Book price is "+bookBean.getPrice()+"result===="+result;
+        return "Hello Spring Boot SUCCESS! The BookName is "+bookBean.getName()+";and Book Author is "+bookBean.getAuthor()+";and Book price is "+bookBean.getPrice()+"result===="+result;
     }
 }
