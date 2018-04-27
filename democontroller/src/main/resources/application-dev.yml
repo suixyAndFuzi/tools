@@ -11,6 +11,6 @@ spring:
             password: ipharmacare
         db2:
             driver-class-name: com.mysql.jdbc.Driver
-            url: jdbc:mysql://10.1.1.147:3306/system_center?characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&rewriteBatchedStatements=true&useAffectedRows=true
+            url: jdbc:mysql://10.1.1.32:3306/system_center?characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&rewriteBatchedStatements=true&useAffectedRows=true
             username: root
             password: ipharmacare
