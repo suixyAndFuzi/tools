@@ -5,7 +5,7 @@ public class ThreadPoolExecutorManager {
 
 
     /****************************初始化数据线程池************************************************************/
-    private static int INIT_DATA_THREAD_NUM = 40; // 核心线程数
+    private static int INIT_DATA_THREAD_NUM = 20; // 核心线程数
 
     private static int INIT_DATA_TASK_LIMIT = 100;   //最大任务数
 

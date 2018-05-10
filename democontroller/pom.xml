@@ -22,18 +22,17 @@
             <artifactId>demo-server</artifactId>
         </dependency>
 
-
     </dependencies>
 
-    <build>
-        <!-- 为jar包取名 -->
-        <finalName>blm-start</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+    <!--<build>-->
+        <!--&lt;!&ndash; 为jar包取名 &ndash;&gt;-->
+        <!--<finalName>blm-start</finalName>-->
+        <!--<plugins>-->
+            <!--<plugin>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+            <!--</plugin>-->
+        <!--</plugins>-->
+    <!--</build>-->
 
 </project>
