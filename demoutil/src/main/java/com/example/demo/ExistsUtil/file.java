@@ -35,7 +35,8 @@ public class file {
      */
     public static void fileIsExists(String path, String sheetName, String[] heads) {
         Workbook wb;
-        @Cleanup OutputStream os;
+        //@Cleanup
+        OutputStream os;
         File file = new File(path);
         if (!file.exists()) {
             try {

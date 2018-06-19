@@ -47,5 +47,10 @@
         <version>3.10-FINAL</version>
     </dependency>
 
+    <dependency>
+        <groupId>dom4j</groupId>
+        <artifactId>dom4j</artifactId>
+    </dependency>
+
 </dependencies>
 </project>
