@@ -1,5 +1,7 @@
 package com.example.demo.threadPool;
 
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
+
 import java.util.concurrent.*;
 public class ThreadPoolExecutorManager {
 
@@ -15,13 +17,10 @@ public class ThreadPoolExecutorManager {
 
     private static BlockingQueue<Runnable> transitionDataQueue = new LinkedBlockingQueue<>(INIT_DATA_TASK_LIMIT); //初始化数据队列
 
+    private static final ThreadFactory NAMED_THREADFACTORY = new ThreadFactoryBuilder().setNameFormat("producers-%d").build();
+    
     private static ThreadPoolExecutor transitionDataThreadPoolExecutor= new ThreadPoolExecutor(INIT_DATA_THREAD_NUM, INIT_DATA_MAX_THREAD_NUM,
-            INIT_DATA_THREAD_KEEP_ALIVE_TIME, TimeUnit.SECONDS, transitionDataQueue, new ThreadFactory() {
-        @Override
-        public Thread newThread(Runnable r) {
-            return new Thread(r,"producers" + r.hashCode());//线程名
-        }
-    });
+            INIT_DATA_THREAD_KEEP_ALIVE_TIME, TimeUnit.SECONDS, transitionDataQueue, NAMED_THREADFACTORY );
 
 
     public static java.util.concurrent.ThreadPoolExecutor getproducerDataThreadPoolExecutor(){
