@@ -9,15 +9,18 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>demoutil</artifactId>
+    <artifactId>demo-util</artifactId>
 
 <dependencies>
-
-    <!--<dependency>-->
-        <!--<groupId>org.apache.commons</groupId>-->
-        <!--<artifactId>commons-lang3</artifactId>-->
-        <!--<version>3.5</version>-->
-    <!--</dependency>-->
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>3.5</version>
+    </dependency>
     <dependency>
         <groupId>commons-io</groupId>
         <artifactId>commons-io</artifactId>
@@ -38,11 +41,6 @@
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
     </dependency>
-    <dependency>
-        <groupId>com.example</groupId>
-        <artifactId>demo-controller</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-    </dependency>
 
     <dependency>
         <groupId>org.apache.poi</groupId>
@@ -53,6 +51,27 @@
     <dependency>
         <groupId>dom4j</groupId>
         <artifactId>dom4j</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpclient</artifactId>
+        <version>4.3.1</version>
+    </dependency>
+
+
+    <dependency>
+        <groupId>org.redisson</groupId>
+        <artifactId>redisson</artifactId>
+        <version>3.5.0</version>
     </dependency>
 
 </dependencies>

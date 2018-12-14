@@ -9,27 +9,27 @@ import java.util.List;
 public class Dom4jUtil {
 
 
-    public static void main(String args[])  throws Exception{
-        String str = "111";
-        System.out.println("路径1："+str);//父节点名称
-        aaa(str);
-        System.out.println("路径3："+str);//父节点名称
-    }
-    public static void aaa(String str){
-        str = str +"/"+ "222";
-        System.out.println("路径2："+str);//父节点名称
-    }
+//    public static void main(String args[])  throws Exception{
+//        String str = "111";
+//        System.out.println("路径1："+str);//父节点名称
+//        aaa(str);
+//        System.out.println("路径3："+str);//父节点名称
+//    }
+//    public static void aaa(String str){
+//        str = str +"/"+ "222";
+//        System.out.println("路径2："+str);//父节点名称
+//    }
 
     /**
      * 获取文件的document对象，然后获取对应的根节点
      * @author chenleixing
      */
-//    public static void main(String args[])  throws Exception{
-//        String str = "<?xml version=\"1.0\" encoding=\"UTF-8\"?> <root> <user editor=\"chenleixing\" date=\"2015-02-15\"> <name editor=\"zhangxiaochao\">张三<a>456</a></name> <year>24</year> <sex>男</sex> </user> <user editor=\"zhangxiaochao\" date=\"2015-02-15\"> 123 <name>李四</name> <year>24</year> <sex>女</sex> </user> </root> ";
-//        Document  document = DocumentHelper.parseText(str);
-//        Element root=document.getRootElement();//获取根节点
-//        getNodes(root,"0","");//从根节点开始遍历所有节点
-//    }
+    public static void main(String args[])  throws Exception{
+        String str = "<?xml version=\"1.0\" encoding=\"UTF-8\"?> <root> <user editor=\"chenleixing\" date=\"2015-02-15\"> <name editor=\"zhangxiaochao\">张三<a>456</a></name> <year>24</year> <sex>男</sex> </user> <user editor=\"zhangxiaochao\" date=\"2015-02-15\"> 123 <name>李四</name> <year>24</year> <sex>女</sex> </user> </root> ";
+        Document  document = DocumentHelper.parseText(str);
+        Element root=document.getRootElement();//获取根节点
+        getNodes(root,"0","");//从根节点开始遍历所有节点
+    }
 
     /**
      * 从指定节点开始,递归遍历所有子节点

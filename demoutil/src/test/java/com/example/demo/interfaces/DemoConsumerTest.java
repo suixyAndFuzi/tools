@@ -1,7 +1,6 @@
 package com.example.demo.interfaces;
 
 
-import com.example.demo.DemoApplication;
 import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,7 +20,7 @@ import org.springframework.web.context.WebApplicationContext;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = DemoApplication.class)
+//@SpringBootTest(classes = DemoApplication.class)
 
 //配置事务的回滚,对数据库的增删改都会回滚,便于测试用例的循环利用
 @WebAppConfiguration

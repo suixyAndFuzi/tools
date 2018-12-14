@@ -12,10 +12,13 @@
     <artifactId>demo-api</artifactId>
 
     <dependencies>
+
+
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
+            <groupId>com.example</groupId>
+            <artifactId>demo-util</artifactId>
         </dependency>
+
     </dependencies>
 
     <build>

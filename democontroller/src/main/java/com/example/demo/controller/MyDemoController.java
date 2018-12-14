@@ -24,4 +24,14 @@ public class MyDemoController {
         String result = myDemoServer.selectDemo(myDemoBean);
         return "Hello Spring Boot SUCCESS! The BookName is "+bookBean.getName()+";and Book Author is "+bookBean.getAuthor()+";and Book price is "+bookBean.getPrice()+"result===="+result;
     }
+
+    /**
+     * Redisson 测试方法
+     * @return
+     */
+    @RequestMapping(value = "/demo1",produces = "text/plain;charset=UTF-8" ,method = RequestMethod.GET)
+    String demo1(){
+        myDemoServer.selectDemo1();
+        return "";
+    }
 }
