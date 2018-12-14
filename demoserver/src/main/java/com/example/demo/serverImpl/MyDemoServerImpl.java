@@ -59,7 +59,7 @@ public class MyDemoServerImpl implements MyDemoServer {
                 @Override
                 public void run() {
                     //获得锁 返回lock对象
-                    RLock mylock = redissLockUtil.lock(key, 2);
+                    redissLockUtil.lock(key, 2);
                     try {
                         Thread.sleep(1000);
                         System.err.println("======获得锁后进行相应的操作======");
@@ -67,7 +67,7 @@ public class MyDemoServerImpl implements MyDemoServer {
                         e.printStackTrace();
                     } finally {
                         //根据lock对象手动释放锁，与java中的lock基本一致
-                        redissLockUtil.unlock(mylock);
+                        redissLockUtil.unlock(key);
                         System.err.println("");
                     }
                 }

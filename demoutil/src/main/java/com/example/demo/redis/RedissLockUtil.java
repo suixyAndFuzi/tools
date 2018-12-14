@@ -35,20 +35,20 @@ public class RedissLockUtil {
      * @param lockKey
      * @param timeout 超时时间   单位：秒
      */
-    public RLock lock(String lockKey, int timeout) {
+    public void lock(String lockKey, int timeout) {
         RLock mylock = redissonClient.getLock(lockKey);
         mylock.lock(timeout, TimeUnit.MINUTES); //lock提供带timeout参数，timeout结束强制解锁，防止死锁
         System.err.println("======lock======" + Thread.currentThread().getName());
-        return mylock;
     }
 
 
     /**
      * 释放锁
      *
-     * @param lock
+     * @param lockKey
      */
-    public static void unlock(RLock lock) {
+    public void unlock(String lockKey) {
+        RLock lock = redissonClient.getLock(lockKey);
         System.err.println("======unlock======" + Thread.currentThread().getName());
         lock.unlock();
     }
