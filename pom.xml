@@ -22,20 +22,21 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.10.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>2.0.3.RELEASE</version>
     </parent>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <springboot.version>1.5.10.RELEASE</springboot.version>
+        <springboot.version>2.0.3.RELEASE</springboot.version>
         <demo.version>0.0.1-SNAPSHOT</demo.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+
+
             <!--构建的子模块-->
             <dependency>
                 <groupId>com.example</groupId>
@@ -109,9 +110,14 @@
                 <version>1.0.19</version>
             </dependency>
 
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+                <version>${springboot.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
-
 
     <build>
         <plugins>

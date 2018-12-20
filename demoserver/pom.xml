@@ -13,7 +13,6 @@
 
     <dependencies>
 
-
         <!--构建的子模块-->
         <dependency>
             <groupId>com.example</groupId>
@@ -22,22 +21,4 @@
     </dependencies>
 
 
-
-
-<!--整个项目分为三个模块：common，core，web；
-
-core依赖common，web依赖common和core；
-
-在common和core（被依赖的module）的pom.xml中添加如下配置：-->
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <classifier>exec</classifier>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>

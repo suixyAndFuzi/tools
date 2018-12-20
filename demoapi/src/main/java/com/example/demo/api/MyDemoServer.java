@@ -8,4 +8,6 @@ public interface MyDemoServer {
 
 
     void selectDemo1();
+
+    void selectDemo2();
 }

@@ -34,4 +34,14 @@ public class MyDemoController {
         myDemoServer.selectDemo1();
         return "";
     }
+
+    /**
+     * Elasticsearch 测试方法
+     * @return
+     */
+    @RequestMapping(value = "/demo2",produces = "text/plain;charset=UTF-8" ,method = RequestMethod.GET)
+    String demo2(){
+        myDemoServer.selectDemo2();
+        return "";
+    }
 }

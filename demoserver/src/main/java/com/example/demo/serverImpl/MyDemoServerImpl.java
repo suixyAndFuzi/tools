@@ -3,6 +3,7 @@ package com.example.demo.serverImpl;
 
 import com.example.demo.api.MyDemoServer;
 import com.example.demo.bean.MyDemoBean;
+import com.example.demo.elasticsearch.ElasticsearchClict;
 import com.example.demo.http.HttpResult;
 import com.example.demo.http.HttpUtil;
 import com.example.demo.redis.RedissLockUtil;
@@ -24,6 +25,10 @@ public class MyDemoServerImpl implements MyDemoServer {
 
     @Autowired
     private RedissLockUtil redissLockUtil;
+
+
+    @Autowired
+    private ElasticsearchClict elasticsearchClict;
 
     @Override
     public String selectDemo(MyDemoBean myDemoBean) {
@@ -74,5 +79,16 @@ public class MyDemoServerImpl implements MyDemoServer {
             });
             t.start();
         }
+    }
+
+    /**
+     * 调用 elasticsearch 增删改查 简单实现
+     */
+    @Override
+    public void selectDemo2() {
+        elasticsearchClict.save();
+        elasticsearchClict.query();
+        elasticsearchClict.update();
+        elasticsearchClict.delete();
     }
 }

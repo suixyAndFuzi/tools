@@ -1,6 +1,6 @@
 server:
   port: 8080
-  context-path: /helloboot
+  #context-path: /helloboot
 
 spring:
     datasource:
@@ -14,7 +14,12 @@ spring:
             url: jdbc:mysql://10.1.1.32:3306/system_center?characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&rewriteBatchedStatements=true&useAffectedRows=true
             username: root
             password: ipharmacare
-
+    data:
+        elasticsearch:
+            cluster-name: sf-application #集群名(默认值: elasticsearch)
+            cluster-nodes: 10.1.1.94:9301 #9300 是 Java 客户端的端口。9200 是支持 Restful HTTP 的接口。
+            client-transport-sniff: false
+            repositories.enabled: true
 
 http:
 #最大连接数
@@ -33,4 +38,4 @@ http:
 redisson:
 # redisson lock
     address: redis://127.0.0.1:6379
-    password: 
+    password: ipharmacare
