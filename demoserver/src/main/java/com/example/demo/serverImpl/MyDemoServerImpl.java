@@ -4,6 +4,7 @@ package com.example.demo.serverImpl;
 import com.example.demo.api.MyDemoServer;
 import com.example.demo.bean.MyDemoBean;
 import com.example.demo.elasticsearch.ElasticsearchClict;
+import com.example.demo.elasticsearch.RestClientUtil;
 import com.example.demo.http.HttpResult;
 import com.example.demo.http.HttpUtil;
 import com.example.demo.redis.RedissLockUtil;
@@ -29,6 +30,9 @@ public class MyDemoServerImpl implements MyDemoServer {
 
     @Autowired
     private ElasticsearchClict elasticsearchClict;
+
+    @Autowired
+    private RestClientUtil restClientUtil;
 
     @Override
     public String selectDemo(MyDemoBean myDemoBean) {
@@ -86,9 +90,13 @@ public class MyDemoServerImpl implements MyDemoServer {
      */
     @Override
     public void selectDemo2() {
+        //9300 java Api调用  方式
         elasticsearchClict.save();
         elasticsearchClict.query();
         elasticsearchClict.update();
-        elasticsearchClict.delete();
+       // elasticsearchClict.delete();
+
+        //9200 restful 调用方式
+        restClientUtil.search();
     }
 }

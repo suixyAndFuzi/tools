@@ -4,6 +4,9 @@ import com.example.demo.bean.MyDemoBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * 若要使用 9300 java Api端口 需要继承ElasticsearchRepository 接口注入
+ */
 @Service
 public class ElasticsearchClict {
 
