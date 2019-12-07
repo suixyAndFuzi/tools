@@ -108,6 +108,7 @@ public class ThreadPoolExecutorManager {
 
 
 
+    
     public static void main(String[] args) throws Exception {
 //        ThreadPoolExecutorManager.getConsumerDataThreadExecutor().execute(
 //                new UpdateFullTransitionTrear(transitionMapper,transitionFullMapper)
