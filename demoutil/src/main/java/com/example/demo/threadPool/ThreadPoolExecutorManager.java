@@ -112,5 +112,7 @@ public class ThreadPoolExecutorManager {
 //        ThreadPoolExecutorManager.getConsumerDataThreadExecutor().execute(
 //                new UpdateFullTransitionTrear(transitionMapper,transitionFullMapper)
 //        );
+        //        transitionDataThreadPoolExecutor.execute(() -> sendType(authPwd,roomAuth));
+
     }
 }
