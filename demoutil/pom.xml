@@ -45,7 +45,21 @@
         <version>3.5.0</version>
     </dependency>
 
-
+    <!-- Spock依赖 -->
+    <dependency>
+        <groupId>org.spockframework</groupId>
+        <artifactId>spock-core</artifactId>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.spockframework</groupId>
+        <artifactId>spock-spring</artifactId>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.codehaus.groovy</groupId>
+        <artifactId>groovy-all</artifactId>
+    </dependency>
 
 </dependencies>
 </project>
