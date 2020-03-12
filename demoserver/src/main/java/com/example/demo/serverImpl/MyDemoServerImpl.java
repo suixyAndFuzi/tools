@@ -8,6 +8,7 @@ import com.example.demo.elasticsearch.RestClientUtil;
 import com.example.demo.http.HttpResult;
 import com.example.demo.http.HttpUtil;
 import com.example.demo.redis.RedissLockUtil;
+import com.example.demo.serverImpl.Factory.MyFactoryProxy;
 import org.redisson.api.RLock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,6 +34,9 @@ public class MyDemoServerImpl implements MyDemoServer {
 
     @Autowired
     private RestClientUtil restClientUtil;
+
+    @Autowired
+    private MyFactoryProxy myFactoryProxy;
 
     @Override
     public String selectDemo(MyDemoBean myDemoBean) {
@@ -98,5 +102,10 @@ public class MyDemoServerImpl implements MyDemoServer {
 
         //9200 restful 调用方式
         restClientUtil.search();
+    }
+
+
+    private void factoryDemo(){
+        myFactoryProxy.getDemo(1);
     }
 }
