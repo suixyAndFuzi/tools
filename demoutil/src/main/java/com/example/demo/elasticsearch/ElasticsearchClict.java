@@ -58,9 +58,10 @@ public class ElasticsearchClict {
     //查询api
     private void apiQuery() throws Exception {
         List<String> list = Arrays.asList();
-        //查询ES and 条件
+        //查询ES must and 条件
         BoolQueryBuilder query = QueryBuilders.boolQuery();
         for (String locationId : list) {
+            //should 或条件
             query.should(QueryBuilders.wildcardQuery("Id", locationId + "*")).must();
         }
         BoolQueryBuilder allBuidler1 = QueryBuilders.boolQuery();

@@ -61,5 +61,30 @@
         <artifactId>groovy-all</artifactId>
     </dependency>
 
+
+    <!-- itextpdf,导出pdf核心架包 -->
+    <dependency>
+        <groupId>com.itextpdf</groupId>
+        <artifactId>itextpdf</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>com.itextpdf</groupId>
+        <artifactId>itext-asian</artifactId>
+    </dependency>
+    <!-- itextpdf工具包，用来解析html生成pdf -->
+    <dependency>
+        <groupId>com.itextpdf.tool</groupId>
+        <artifactId>xmlworker</artifactId>
+    </dependency>
+    <!-- flying saucer,支持对CSS高级特性的解析 -->
+    <dependency>
+        <groupId>org.xhtmlrenderer</groupId>
+        <artifactId>flying-saucer-pdf</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.freemarker</groupId>
+        <artifactId>freemarker</artifactId>
+    </dependency>
+
 </dependencies>
 </project>

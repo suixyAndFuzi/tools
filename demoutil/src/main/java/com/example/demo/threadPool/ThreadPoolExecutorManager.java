@@ -2,6 +2,8 @@ package com.example.demo.threadPool;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.*;
 public class ThreadPoolExecutorManager {
 
@@ -23,7 +25,7 @@ public class ThreadPoolExecutorManager {
             INIT_DATA_THREAD_KEEP_ALIVE_TIME, TimeUnit.SECONDS, transitionDataQueue, NAMED_THREADFACTORY );
 
 
-    public static java.util.concurrent.ThreadPoolExecutor getproducerDataThreadPoolExecutor(){
+    public static ThreadPoolExecutor getproducerDataThreadPoolExecutor(){
         return transitionDataThreadPoolExecutor;
     }
 
@@ -83,7 +85,7 @@ public class ThreadPoolExecutorManager {
 
     //队列最大存储
     public  static final int BQMAX = 100000;
-    public final static BlockingDeque<Object> originalBQ = new LinkedBlockingDeque<>(BQMAX);
+    public final static BlockingDeque<Map<String,List>> originalBQ = new LinkedBlockingDeque<>(BQMAX);
 
 
     public static Object originalBQPoll() {
@@ -95,7 +97,7 @@ public class ThreadPoolExecutorManager {
     }
 
 
-    public static void originalBQOffer(Object o) {
+    public static void originalBQOffer(Map<String,List> o) {
         if (o == null) {
             return ;
         }
