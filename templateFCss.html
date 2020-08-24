@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8"/>
     <title>Title</title>
     <style>
         body{
@@ -25,14 +24,9 @@
         }
         @page {
             size: 8.5in 11in;
-
             @top-right {
                 content: element(header-right)
             };
-
-            /*@bottom-center {
-                content : "Page " counter(page) " of " counter(pages);
-            };	 */
             @bottom-center {
                 content: element(footer)
             }
@@ -57,9 +51,18 @@
 <div id="footer">
     <div style="text-align: center; width: 100%;font-size: 15px;">Page <span id="pages"> of </span></div>
 </div>
+
 <div class="page">
-    <div class="color">你好，${name}222</div>
-    <img src="data:${fileType};base64,${file64Str}" width="600px" />
+    <div class="color">你好，${name1}</div>
+</div>
+
+<div class="page">
+    <div class="color">你好，${name2}</div>
+</div>
+
+<div class="page">
+    <div class="color">你好，${name}</div>
+    <img src="${file64Str}" width="600px" />
 </div>
 
 </body>
