@@ -31,18 +31,29 @@ class WordToPdfBean{
  */
 public class WordToPdf {
     /**生成的新文件路径**/
-    private static final String NEW_PDF_PATH = "/Users/fuzi/workspace/doc/pdf/testNew.pdf";
+    private static final String NEW_PDF_PATH = "/Users/fuzi/workspace/doc/pdf/recipeNew.pdf";
     /**模板路径*/
-    private static final String TEMPLATE_PATH = "/Users/fuzi/workspace/doc/pdf/test.pdf";
+    private static final String TEMPLATE_PATH = "/Users/fuzi/workspace/doc/pdf/recipe.pdf";
 
     private static final String IMG = "/Users/fuzi/workspace/doc/pdf/111.png";
 
     public static void main(String[] args) {
-        WordToPdfBean w = new  WordToPdfBean("name","张三",1);
-        WordToPdfBean w2 = new  WordToPdfBean("age","123",1);
-        WordToPdfBean w3 = new  WordToPdfBean("xxx",IMG,2);
-        WordToPdfBean w4 = new  WordToPdfBean("yyy",IMG,2);
-        List<WordToPdfBean> list = Arrays.asList(w,w2,w3,w4);
+        WordToPdfBean w = new  WordToPdfBean("organInfo","福建省立医院互联网医院",1);
+        WordToPdfBean w2 = new  WordToPdfBean("patientId","3831291",1);
+        WordToPdfBean w3 = new  WordToPdfBean("recipeCode","ngri121345689",1);
+        WordToPdfBean w4 = new  WordToPdfBean("pName","昱平",1);
+        WordToPdfBean w5 = new  WordToPdfBean("pGender","男",1);
+        WordToPdfBean w6 = new  WordToPdfBean("pAge","123",1);
+
+        WordToPdfBean w7 = new  WordToPdfBean("pType","自费",1);
+        WordToPdfBean w8 = new  WordToPdfBean("departInfo","时间科",1);
+        WordToPdfBean w9 = new  WordToPdfBean("cDate","2008-12-08 13:62",1);
+        WordToPdfBean w10 = new  WordToPdfBean("mobile","13697238800",1);
+        WordToPdfBean w11 = new  WordToPdfBean("disease","的环境的看哈客户端画口红的哈哈哈看见好看好看花见花开卡号很快就和空间水水水水还是",1);
+
+//        WordToPdfBean w3 = new  WordToPdfBean("xxx",IMG,2);
+//        WordToPdfBean w4 = new  WordToPdfBean("yyy",IMG,2);
+        List<WordToPdfBean> list = Arrays.asList(w,w2,w3,w4,w5,w6,w7,w8,w9,w10,w11);
         try {
             pdfOut(list);
         } catch (IOException | DocumentException e) {
