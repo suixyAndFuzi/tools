@@ -1,8 +1,8 @@
-package com.example.demo.serverImpl.Factory.impl;
+package com.example.demo.serverImpl.design.Factory.impl;
 
 import org.springframework.stereotype.Service;
 
-import com.example.demo.serverImpl.Factory.AbstractFactoryService;
+import com.example.demo.serverImpl.design.Factory.AbstractFactoryService;
 
 @Service
 public class FactoryServiceTwoImpl extends AbstractFactoryService {

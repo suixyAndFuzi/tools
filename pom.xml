@@ -149,6 +149,12 @@
                 <artifactId>itext-asian</artifactId>
                 <version>5.2.0</version>
             </dependency>
+            <dependency>
+                <groupId>com.itextpdf</groupId>
+                <artifactId>itext7-core</artifactId>
+                <version>7.1.13</version>
+                <type>pom</type>
+            </dependency>
             <!-- itextpdf工具包，用来解析html生成pdf -->
             <dependency>
                 <groupId>com.itextpdf.tool</groupId>

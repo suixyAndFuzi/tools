@@ -19,7 +19,7 @@ public class RedissonAutoConfiguration {
      *
      * @return
      */
-    @Bean
+   // @Bean
     public RedissonClient getRedisson() {
         Config config = new Config();
         //指定编码，默认编码为org.redisson.codec.JsonJacksonCodec

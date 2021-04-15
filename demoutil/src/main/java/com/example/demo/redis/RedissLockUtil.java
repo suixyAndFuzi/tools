@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 @Service
 public class RedissLockUtil {
 
-    @Autowired
+   // @Autowired
     private RedissonClient redissonClient;
 
     /**

@@ -71,6 +71,11 @@
         <groupId>com.itextpdf</groupId>
         <artifactId>itext-asian</artifactId>
     </dependency>
+    <dependency>
+        <groupId>com.itextpdf</groupId>
+        <artifactId>itext7-core</artifactId>
+        <type>pom</type>
+    </dependency>
     <!-- itextpdf工具包，用来解析html生成pdf -->
     <dependency>
         <groupId>com.itextpdf.tool</groupId>

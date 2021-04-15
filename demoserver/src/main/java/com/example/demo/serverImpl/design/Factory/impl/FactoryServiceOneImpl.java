@@ -1,6 +1,6 @@
-package com.example.demo.serverImpl.Factory.impl;
+package com.example.demo.serverImpl.design.Factory.impl;
 
-import com.example.demo.serverImpl.Factory.AbstractFactoryService;
+import com.example.demo.serverImpl.design.Factory.AbstractFactoryService;
 import org.springframework.stereotype.Service;
 
 @Service

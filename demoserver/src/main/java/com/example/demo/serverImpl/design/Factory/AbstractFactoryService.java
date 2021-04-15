@@ -1,4 +1,4 @@
-package com.example.demo.serverImpl.Factory;
+package com.example.demo.serverImpl.design.Factory;
 
 /**
  * @author fuzi

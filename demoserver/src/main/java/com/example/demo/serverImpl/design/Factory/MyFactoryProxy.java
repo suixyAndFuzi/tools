@@ -1,4 +1,4 @@
-package com.example.demo.serverImpl.Factory;
+package com.example.demo.serverImpl.design.Factory;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,6 +10,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Service;
 
+/**
+ * 设计模式-工厂
+ */
 @Service
 public class MyFactoryProxy implements ApplicationContextAware {
 

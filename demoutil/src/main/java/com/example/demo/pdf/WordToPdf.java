@@ -50,36 +50,37 @@ public class WordToPdf {
         WordToPdfBean w9 = new  WordToPdfBean("cDate","2008-12-08 13:62",1);
         WordToPdfBean w10 = new  WordToPdfBean("mobile","13697238800",1);
         WordToPdfBean w11 = new  WordToPdfBean("disease","的环境的看哈客户端画口红的哈哈哈看见好看好看花见花开卡号很快就和空间水水水水还是",1);
-
+        WordToPdfBean w77 = new  WordToPdfBean("mytitle","222222222",1);
 //        WordToPdfBean w3 = new  WordToPdfBean("xxx",IMG,2);
 //        WordToPdfBean w4 = new  WordToPdfBean("yyy",IMG,2);
-        List<WordToPdfBean> list = Arrays.asList(w,w2,w3,w4,w5,w6,w7,w8,w9,w10,w11);
+        List<WordToPdfBean> list = Arrays.asList(w,w2,w3,w4,w5,w6,w7,w8,w9,w10,w11,w77);
         try {
             pdfOut(list);
         } catch (IOException | DocumentException e) {
             System.out.println(e);
         }
     }
-
+    public static final String DEST = "/Users/fuzi/Downloads/add.pdf";
+    public static final String DEST1 = "/Users/fuzi/Downloads/add1.pdf";
     /**
      * pdf 读取输出流 方法
      * @param list
      */
     public static void pdfOut(List<WordToPdfBean> list) throws IOException, DocumentException{
             // 读取pdf模板
-            PdfReader reader = new PdfReader(TEMPLATE_PATH);
+            PdfReader reader = new PdfReader(DEST);
             @Cleanup  ByteArrayOutputStream bos = new ByteArrayOutputStream();
             PdfStamper stamper = new PdfStamper(reader, bos);
             AcroFields form = stamper.getAcroFields();
-            form.addSubstitutionFont(BaseFont.createFont("STSong-Light", "UniGB-UCS2-H", BaseFont.NOT_EMBEDDED));
+            form.addSubstitutionFont(BaseFont.createFont("STSongStd-Light", "UniGB-UCS2-H", BaseFont.NOT_EMBEDDED));
             //组织参数
             pdf(list,form);
             // 如果为false，生成的PDF文件可以编辑，如果为true，生成的PDF文件不可以编辑
-            stamper.setFormFlattening(true);
+            stamper.setFormFlattening(false);
             stamper.close();
 
             // 输出流
-            @Cleanup FileOutputStream out = new FileOutputStream(NEW_PDF_PATH);
+            @Cleanup FileOutputStream out = new FileOutputStream(DEST1);
             Document doc = new Document();
             PdfSmartCopy copy = new PdfSmartCopy(doc, out);
             doc.open();

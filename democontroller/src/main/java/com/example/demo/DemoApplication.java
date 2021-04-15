@@ -18,7 +18,7 @@ public class DemoApplication {
         System.setProperty("es.set.netty.runtime.available.processors", "false");
 
         SpringApplication.run(DemoApplication.class, args);
-        logger.error("service start");
+        logger.info("service start");
     }
 
 }
