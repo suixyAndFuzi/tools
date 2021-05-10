@@ -1,17 +1,12 @@
 package com.example.demo.pdf;
 
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Image;
-import com.itextpdf.text.Rectangle;
+import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
 import lombok.Cleanup;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.io.ByteArrayOutputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.Arrays;
 import java.util.List;
 
@@ -40,6 +35,7 @@ public class WordToPdf {
      **/
     //private static final String NEW_PDF_PATH = "/Users/fuzi/workspace/doc/pdf/recipeDrug.pdf";
     private static final String DEST = "/Users/fuzi/Downloads/add.pdf";
+    private static final String DEST1 = "/Users/fuzi/Downloads/dddd.pdf";
     /**
      * 模板路径
      */
@@ -74,6 +70,8 @@ public class WordToPdf {
         } catch (IOException | DocumentException e) {
             System.out.println(e);
         }
+
+        generateCoOrdinatePdf();
     }
 
 
@@ -92,7 +90,7 @@ public class WordToPdf {
         //组织参数
         pdf(list, form);
         // 如果为false，生成的PDF文件可以编辑，如果为true，生成的PDF文件不可以编辑
-        stamper.setFormFlattening(false);
+        stamper.setFormFlattening(true);
         stamper.close();
 
         // 输出流
@@ -130,10 +128,32 @@ public class WordToPdf {
 
 
     public static void getPdfTextPosition(AcroFields fields) {
-        List<AcroFields.FieldPosition> pos = fields.getFieldPositions("recipeType");
+        List<AcroFields.FieldPosition> pos = fields.getFieldPositions("test1");
         AcroFields.FieldPosition pitem = pos.get(0);
         Rectangle pRectangle = pitem.position;
         String res = pRectangle.getLeft() + "," + pRectangle.getBottom();
         System.out.println(res);
+    }
+
+
+    public static void generateCoOrdinatePdf() {
+        try {
+            PdfReader reader = new PdfReader(DEST);
+            @Cleanup OutputStream output = new FileOutputStream(new File(DEST1));
+            PdfStamper stamper = new PdfStamper(reader, output);
+            PdfContentByte page = stamper.getOverContent(1);
+            BaseFont bf = BaseFont.createFont("STSong-Light", "UniGB-UCS2-H", BaseFont.EMBEDDED);
+            //添加文本块
+            page.beginText();
+            page.setColorFill(BaseColor.BLACK);
+            page.setFontAndSize(bf, 10);
+            page.setTextMatrix(162.0F, 562.92F);
+            page.showText("decoction.getValue()谢谢谢谢谢谢");
+            page.endText();
+            stamper.close();
+            reader.close();
+        } catch (Exception e) {
+            System.out.println("Exception " + e);
+        }
     }
 }
