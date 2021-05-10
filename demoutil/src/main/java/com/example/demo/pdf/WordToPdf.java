@@ -126,7 +126,11 @@ public class WordToPdf {
         getPdfTextPosition(form);
     }
 
-
+    /**
+     * 定位某个表单字段坐标 x,y
+     *
+     * @param fields
+     */
     public static void getPdfTextPosition(AcroFields fields) {
         List<AcroFields.FieldPosition> pos = fields.getFieldPositions("test1");
         AcroFields.FieldPosition pitem = pos.get(0);
@@ -135,7 +139,9 @@ public class WordToPdf {
         System.out.println(res);
     }
 
-
+    /**
+     * 根据坐标 x，y 填充文字
+     */
     public static void generateCoOrdinatePdf() {
         try {
             PdfReader reader = new PdfReader(DEST);
