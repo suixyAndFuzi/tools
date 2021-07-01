@@ -39,32 +39,37 @@ public class WordToPdf {
     /**
      * 模板路径
      */
-    private static final String TEMPLATE_PATH = "/Users/fuzi/github/tools/doc/pdf/recipeDrug.pdf";
+    //private static final String TEMPLATE_PATH = "/Users/fuzi/github/tools/doc/pdf/pdfmb.pdf";
+
+    private static final String TEMPLATE_PATH = "/Users/fuzi/github/tools/pdfmb.pdf";
 
     private static final String IMG = "/Users/fuzi/github/tools/doc/pdf/111.png";
 
     public static void main(String[] args) {
 
-        WordToPdfBean w = new WordToPdfBean("organInfo", "福建省立医院互联网医院", 1);
-        WordToPdfBean w2 = new WordToPdfBean("patientId", "3831291", 1);
-        WordToPdfBean w3 = new WordToPdfBean("recipeCode", "ngri12", 1);
+        WordToPdfBean w = new WordToPdfBean("recipe.organName", "福建省立医院互联网医院", 1);
+        WordToPdfBean w2 = new WordToPdfBean("visitIdOutter", "3831291", 1);
+        WordToPdfBean w3 = new WordToPdfBean("recipe.recipeId", "ngri12", 1);
         WordToPdfBean w16 = new WordToPdfBean("recipeCode1", "ngri121345689", 1);
-        WordToPdfBean w4 = new WordToPdfBean("pName", "昱平", 1);
-        WordToPdfBean w5 = new WordToPdfBean("pGender", "男", 1);
+        WordToPdfBean w4 = new WordToPdfBean("patient.patientName", "昱平", 1);
+        WordToPdfBean w5 = new WordToPdfBean("patient.patientSex", "男", 1);
         WordToPdfBean w6 = new WordToPdfBean("pAge", "123", 1);
 
-        WordToPdfBean w7 = new WordToPdfBean("pType", "自费", 1);
-        WordToPdfBean w8 = new WordToPdfBean("departInfo", "时间科", 1);
-        WordToPdfBean w9 = new WordToPdfBean("cDate", "2008-12-08 13:62", 1);
-        WordToPdfBean w10 = new WordToPdfBean("mobile", "13697238800", 1);
-        WordToPdfBean w11 = new WordToPdfBean("disease", "的环境的看哈客户端画口红的哈哈哈看见好看好看花见花开卡号很快就和空间水水水水还是", 1);
+        WordToPdfBean w7 = new WordToPdfBean("recipeExtend.cardNo", "自费", 1);
+        WordToPdfBean w8 = new WordToPdfBean("recipe.departText", "时间科", 1);
+        WordToPdfBean w9 = new WordToPdfBean("recipe.signDate", "2008-12-08 13:62", 1);
+        WordToPdfBean w10 = new WordToPdfBean("patient.mobile", "13697238800", 1);
+        WordToPdfBean w11 = new WordToPdfBean("recipe.organDiseaseName", "的环境的看哈客户端画口红的哈哈哈看见好看好看花见花开卡号很快就和空间水水水水还是", 1);
         WordToPdfBean w12 = new WordToPdfBean("myTitle", "222222222", 1);
 //        WordToPdfBean w3 = new  WordToPdfBean("xxx",IMG,2);
-        WordToPdfBean w13 = new WordToPdfBean("yyy", IMG, 2);
+        WordToPdfBean w13 = new WordToPdfBean("recipeExtend.superviseRecipecode", IMG, 2);
 
         WordToPdfBean w14 = new WordToPdfBean("recipeType", "普通", 1);
         WordToPdfBean w15 = new WordToPdfBean("weight", "45", 1);
-        List<WordToPdfBean> list = Arrays.asList(w, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, w13, w14, w15, w16);
+
+        WordToPdfBean w18 = new WordToPdfBean("doctorSignImg,doctorSignImgToken", "昱平", 1);
+
+        List<WordToPdfBean> list = Arrays.asList(w, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, w13, w14, w15, w16, w18);
         try {
             pdfOut(list);
         } catch (IOException | DocumentException e) {
@@ -132,7 +137,7 @@ public class WordToPdf {
      * @param fields
      */
     public static void getPdfTextPosition(AcroFields fields) {
-        List<AcroFields.FieldPosition> pos = fields.getFieldPositions("test1");
+        List<AcroFields.FieldPosition> pos = fields.getFieldPositions("checkerSignImg,checkerSignImgToken");
         AcroFields.FieldPosition pitem = pos.get(0);
         Rectangle pRectangle = pitem.position;
         String res = pRectangle.getLeft() + "," + pRectangle.getBottom();
@@ -153,8 +158,8 @@ public class WordToPdf {
             page.beginText();
             page.setColorFill(BaseColor.BLACK);
             page.setFontAndSize(bf, 10);
-            page.setTextMatrix(162.0F, 562.92F);
-            page.showText("decoction.getValue()谢谢谢谢谢谢");
+            page.setTextMatrix(301.605F, 270.123F);
+            page.showText("decoction.getValue()谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢");
             page.endText();
             stamper.close();
             reader.close();
